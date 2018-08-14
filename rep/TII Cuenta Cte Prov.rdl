@@ -40,8 +40,8 @@
           </QueryParameter>
         </QueryParameters>
         <CommandText>select CMPNYNAM ,INTERID	
-from dynamics..SY01500
-where INTERID = @BASE</CommandText>
+from from dynamics..SY01500
+WHERE INTERID = @BASE</CommandText>
       </Query>
       <Fields>
         <Field Name="CMPNYNAM">
@@ -1792,7 +1792,7 @@ Switch(Fields!TIPO_DOC.Value = "1", -Fields!MONTO.Value,
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Microsoft.VisualBasic.Strings.RTrim(First(Fields!CMPNYNAM.Value, "COMPANIA"))</Value>
+                    <Value>=Parameters!BASE.Value</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -2190,7 +2190,13 @@ Switch(Fields!TIPO_DOC.Value = "1", -Fields!MONTO.Value,
   <ReportParameters>
     <ReportParameter Name="SERVIDOR">
       <DataType>String</DataType>
+      <DefaultValue>
+        <Values>
+          <Value>WWSQLAD\DYNGPARG</Value>
+        </Values>
+      </DefaultValue>
       <Prompt>SERVIDOR</Prompt>
+      <Hidden>true</Hidden>
     </ReportParameter>
     <ReportParameter Name="BASE">
       <DataType>String</DataType>
@@ -2203,15 +2209,15 @@ Switch(Fields!TIPO_DOC.Value = "1", -Fields!MONTO.Value,
           </ParameterValue>
           <ParameterValue>
             <Value>TIITS</Value>
-            <Label>TIISELAM TEST                                                    </Label>
+            <Label>TIISELAM TEST                       </Label>
           </ParameterValue>
           <ParameterValue>
             <Value>PRO12</Value>
-            <Label>12 NUDOS</Label>
+            <Label>12 NUDOS S.A.S</Label>
           </ParameterValue>
           <ParameterValue>
             <Value>TST12</Value>
-            <Label>TEST - 12 NUDOS                                                  </Label>
+            <Label>TEST - 12 NUDOS   </Label>
           </ParameterValue>
         </ParameterValues>
       </ValidValues>
@@ -2262,17 +2268,17 @@ Switch(Fields!TIPO_DOC.Value = "1", -Fields!MONTO.Value,
           <ParameterName>BASE</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
           <ParameterName>FECHA_DESDE</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>2</RowIndex>
+          <ColumnIndex>1</ColumnIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>FECHA_HASTA</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>2</RowIndex>
           <ParameterName>VENDOR</ParameterName>
         </CellDefinition>
