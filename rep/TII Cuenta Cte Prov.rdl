@@ -5,7 +5,8 @@
     <DataSource Name="DataSource1">
       <ConnectionProperties>
         <DataProvider>SQL</DataProvider>
-        <ConnectString>="Data Source=WWSQLAD\DYNGPARG ;Initial Catalog=" &amp;Parameters!BASE.Value</ConnectString>
+        <ConnectString>="Data Source=" &amp; Parameters!SERVIDOR.Value &amp; " ;Initial Catalog=" &amp; Parameters!BASE.Value
+'WWSQLAD\DYNGPARG</ConnectString>
         <IntegratedSecurity>true</IntegratedSecurity>
       </ConnectionProperties>
       <rd:SecurityType>Integrated</rd:SecurityType>
@@ -2187,18 +2188,22 @@ Switch(Fields!TIPO_DOC.Value = "1", -Fields!MONTO.Value,
     </ReportSection>
   </ReportSections>
   <ReportParameters>
+    <ReportParameter Name="SERVIDOR">
+      <DataType>String</DataType>
+      <Prompt>SERVIDOR</Prompt>
+    </ReportParameter>
     <ReportParameter Name="BASE">
       <DataType>String</DataType>
       <Prompt>BASE</Prompt>
       <ValidValues>
         <ParameterValues>
           <ParameterValue>
-            <Value>TIITS</Value>
-            <Label>TIISELAM TEST                                                    </Label>
-          </ParameterValue>
-          <ParameterValue>
             <Value>TIISA</Value>
             <Label>Tecnologías Informáticas Integradas S.A.</Label>
+          </ParameterValue>
+          <ParameterValue>
+            <Value>TIITS</Value>
+            <Label>TIISELAM TEST                                                    </Label>
           </ParameterValue>
           <ParameterValue>
             <Value>PRO12</Value>
@@ -2252,24 +2257,29 @@ Switch(Fields!TIPO_DOC.Value = "1", -Fields!MONTO.Value,
       <NumberOfRows>3</NumberOfRows>
       <CellDefinitions>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
+          <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>BASE</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>0</RowIndex>
+          <RowIndex>1</RowIndex>
           <ParameterName>FECHA_DESDE</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
+          <RowIndex>2</RowIndex>
           <ParameterName>FECHA_HASTA</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
-          <RowIndex>1</RowIndex>
+          <RowIndex>2</RowIndex>
           <ParameterName>VENDOR</ParameterName>
+        </CellDefinition>
+        <CellDefinition>
+          <ColumnIndex>0</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>SERVIDOR</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
