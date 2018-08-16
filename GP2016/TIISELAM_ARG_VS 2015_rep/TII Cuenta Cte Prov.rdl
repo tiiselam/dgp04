@@ -40,7 +40,7 @@
           </QueryParameter>
         </QueryParameters>
         <CommandText>select CMPNYNAM ,INTERID	
-from from dynamics..SY01500
+from dynamics..SY01500
 WHERE INTERID = @BASE</CommandText>
       </Query>
       <Fields>
@@ -1792,7 +1792,7 @@ Switch(Fields!TIPO_DOC.Value = "1", -Fields!MONTO.Value,
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>=Parameters!BASE.Value</Value>
+                    <Value>=Trim(First(Fields!CMPNYNAM.Value, "COMPANIA"))</Value>
                     <Style>
                       <FontSize>14pt</FontSize>
                       <FontWeight>Bold</FontWeight>
