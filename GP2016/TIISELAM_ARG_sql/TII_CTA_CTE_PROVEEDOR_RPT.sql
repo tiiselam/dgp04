@@ -1,9 +1,12 @@
-USE TIITS	
 GO
 
 /****** Object:  View [dbo].[TII_CTA_CTE_PROVEEDOR_RPT]    Script Date: 14/08/2018 10:57:33 ******/
 SET ANSI_NULLS ON
 GO
+
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[TII_CTA_CTE_PROVEEDOR_RPT]') and OBJECTPROPERTY(id, N'IsView') = 1) 
+drop view [dbo].[TII_CTA_CTE_PROVEEDOR_RPT]
+go
 
 SET QUOTED_IDENTIFIER ON
 GO
